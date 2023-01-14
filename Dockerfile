@@ -1,4 +1,4 @@
-FROM node:18.13
+FROM node:18.13-alpine3.16
 
 WORKDIR /usr/src/app
 
@@ -14,5 +14,5 @@ COPY . .
 # ADD . /app
 # # The command to start our container
 # CMD node server.js WCn4+;HM7psM#KD
-PORT 3000
+EXPOSE 3000
 CMD ["npm", "start"]

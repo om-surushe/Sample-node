@@ -1,6 +1,8 @@
 const app = require('express')()
 require('express-ws')(app);
 
+const PORT = process.env.PORT || 3000
+
 // REST endpoint
 app.get('/', (req, res) => {
     res.send('Fast response');
@@ -13,4 +15,6 @@ app.ws('/echo', (ws, req) => {
     });
 });
 
-app.listen(3000);
+app.listen(PORT, () => {
+    console.log(`Listening on port ${PORT}`);
+});
